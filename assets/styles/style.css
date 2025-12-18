@@ -1,0 +1,113 @@
+/* root */
+:root {
+  /* colors */
+  --color-grey-950: #08070b;
+  --color-grey-900: #14131b;
+  --color-grey-850: #18171f;
+  --color-grey-800: #24232c;
+  --color-grey-700: #54535b;
+  --color-grey-600: #817d92;
+  --color-grey-500: #e6e5ea;
+  --color-green-200: #a4ffaf;
+  --color-yellow-300: #f8cd65;
+  --color-orange-400: #fb7c58;
+  --color-red-500: #f64a4a;
+  --color-almostWhite: #e6e5ea;
+
+  /* gradient */
+  --color-gradient: linear-gradient(#14131b, #08070b);
+
+  /* typo */
+  --fs-pr1: 3.2rem;
+  --fs-lh1: 4.2rem;
+  --fs-pr2: 2.4rem;
+  --fs-lh2: 3.2rem;
+  --fs-pr3: 1.8rem;
+  --fs-lh3: 2.4rem;
+  --fs-pr4: 1.6rem;
+  --fs-lh4: 2rem;
+
+  /* space */
+  --spacing-100: 0.8rem;
+  --spacing-200: 1.6rem;
+  --spacing-300: 2.4rem;
+  --spacing-400: 3.2rem;
+  --spacing-700: 5.6rem;
+  --spacing-1000: 8rem;
+  --spacing-1300: 10.4rem;
+  --spacing-1600: 12.8rem;
+  --spacing-2000: 16rem;
+  --spacing-2200: 17.6rem;
+  --spacing-2300: 18.4rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* base */
+body {
+  font-family: "jet brains", serif;
+  background-color: var(--color-grey-600);
+}
+
+/* slider sectio */
+.slider--block {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(var(--spacing-100), 2vw, var(--spacing-200));
+  transition: all 150ms ease-out;
+  background-color: var(--color-grey-800);
+  color: var(--color-almostWhite);
+  padding: clamp(var(--spacing-400), 2vw, calc(var(--spacing-400) + 0.5rem))
+    clamp(var(--spacing-300), 2vw, calc(var(--spacing-300) + 0.5rem));
+}
+
+.slider--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider--title {
+  font-size: var(--fs-pr3);
+  line-height: var(--fs-lh3);
+}
+
+.slider--value {
+  font-size: var(--fs-pr1);
+  line-height: var(--fs-lh1);
+  color: var(--color-green-200);
+}
+
+.slider--range {
+  appearance: none;
+  height: clamp(var(--spacing-100), 2.5vw, calc(var(--spacing-100) + 0.2rem));
+  transition: 200s ease-out;
+  background-color: var(--color-green-200);
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.slider--range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 28px;
+  width: 28px;
+  background: var(--color-almostWhite);
+  border-radius: 50%;
+  border: 0;
+  outline: 0;
+  transition: background-color 150ms ease-in;
+}
+
+.slider--range::-webkit-slider-thumb:active {
+  height: 26px;
+  width: 26px;
+  background-color: var(--color-grey-850);
+  outline: 2px solid var(--color-green-200);
+}
+
+.slider--block::-webkit-progress-value {
+  background-color: #9cff9c;
+  border-radius: 10px;
+}

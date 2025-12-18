@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "jet brains";
+  src: url(../fonts/static/JetBrainsMono-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: "jet brains";
+  src: url(../fonts/static/JetBrainsMono-BoldItalic.ttf);
+  font-weight: 700;
+  font-style: italic;
+}
