@@ -49,6 +49,18 @@ html {
 body {
   font-family: "jet brains", serif;
   background-color: var(--color-grey-600);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-gradient);
+}
+
+.app--title {
+  font-size: clamp(var(--fs-pr4), 3vw, var(--fs-pr3));
+  line-height: var(--fs-lh3);
+  color: var(--color-grey-600);
+  text-align: center;
 }
 
 /* slider sectio */
@@ -59,8 +71,6 @@ body {
   transition: all 150ms ease-out;
   background-color: var(--color-grey-800);
   color: var(--color-almostWhite);
-  padding: clamp(var(--spacing-400), 2vw, calc(var(--spacing-400) + 0.5rem))
-    clamp(var(--spacing-300), 2vw, calc(var(--spacing-300) + 0.5rem));
 }
 
 .slider--header {
@@ -84,19 +94,20 @@ body {
   appearance: none;
   height: clamp(var(--spacing-100), 2.5vw, calc(var(--spacing-100) + 0.2rem));
   transition: 200s ease-out;
-  background-color: var(--color-green-200);
+  background-color: var(--color-grey-900);
   cursor: pointer;
   margin-bottom: 0.5rem;
 }
 
 .slider--range::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 28px;
-  width: 28px;
+  height: 26px;
+  width: 26px;
+  outline: 0.2rem solid var(--color-almostWhite);
+  padding: 0.2rem;
   background: var(--color-almostWhite);
   border-radius: 50%;
   border: 0;
-  outline: 0;
   transition: background-color 150ms ease-in;
 }
 
@@ -127,7 +138,7 @@ body {
 
 .info--rate--section {
   display: flex;
-  font-size: var(--fs-pr2);
+  align-items: center;
   color: var(--color-almostWhite);
 }
 
@@ -139,15 +150,22 @@ body {
   margin-left: 1.4rem;
 }
 .info--icon {
-  width: 10px;
+  width: clamp(11px, 2vw, 15px);
   height: 28px;
   border: 0.2rem solid var(--color-almostWhite);
 }
 
+.info--title {
+  font-size: clamp(var(--fs-pr4), 3vw, var(--fs-pr2));
+}
+
+.password--power {
+  font-size: clamp(var(--fs-pr4), 3vw, var(--fs-pr2));
+}
+
 /* check box section */
 .check--block {
-  background-color: var(--color-grey-850);
-  padding: var(--spacing-400);
+  background-color: var(--color-grey-800);
   display: grid;
   gap: var(--spacing-200);
 }
@@ -156,12 +174,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: var(--fs-pr3);
+  font-size: clamp(calc(var(--fs-pr4) - 0.2rem), 2.5vw, var(--fs-pr3));
   line-height: var(--fs-lh3);
   color: var(--color-almostWhite);
   gap: var(--spacing-300);
   user-select: none;
   letter-spacing: 0.5px;
+  transition: all 100ms;
 }
 
 .check--list {
@@ -218,13 +237,13 @@ body {
 .btn:hover {
   background-color: transparent;
   padding: calc(var(--spacing-200) - 0.2rem);
-  background-color: var(--color-grey-850);
+  background-color: var(--color-grey-800);
   color: var(--color-green-200);
   border: 2px solid var(--color-green-200);
 }
 
 .btn:active {
-  background-color: var(--color-grey-800);
+  background-color: var(--color-grey-700);
 }
 
 .arrow--icon {
@@ -241,25 +260,28 @@ body {
 
 /* password section */
 .generate--section {
-  background-color: var(--color-grey-850);
+  background-color: var(--color-grey-800);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: var(--spacing-200) var(--spacing-400);
 }
 .input--password {
-  background-color: var(--color-grey-850);
+  background-color: var(--color-grey-800);
   border: 0;
   outline: 0;
   width: 100%;
+  opacity: 0.2;
   color: var(--color-almostWhite);
   caret-color: black;
   font-size: var(--fs-pr1);
   line-height: var(--fs-lh1);
+  transition: all 200ms;
 }
 .input--password::placeholder {
   font-size: var(--fs-pr1);
   line-height: var(--fs-lh1);
+  opacity: 1;
 }
 
 .icon--copy {
@@ -284,4 +306,36 @@ body {
   font-size: var(--fs-pr3);
   line-height: var(--fs-lh3);
   color: var(--color-green-200);
+}
+
+/* app section */
+.app--section {
+  display: grid;
+  gap: clamp(var(--spacing-200), 3vw, var(--spacing-400));
+  transition: gap 200ms;
+}
+
+.app--footer {
+  background-color: var(--color-grey-800);
+  padding: clamp(var(--spacing-200), 3vw, var(--spacing-300))
+    clamp(var(--spacing-200), 3vw, var(--spacing-400));
+  transition: padding all 200ms;
+}
+
+.content {
+  margin-bottom: clamp(var(--spacing-200), 3vw, var(--spacing-400));
+  display: grid;
+  gap: var(--spacing-400);
+  transition: all 200ms;
+}
+
+.container {
+  width: 100%;
+  max-width: 90vw;
+}
+
+@media screen and (min-width: 35rem) {
+  .container {
+    max-width: 54rem;
+  }
 }

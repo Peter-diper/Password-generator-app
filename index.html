@@ -11,21 +11,92 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./assets/styles/golobal.css" />
-    <title>Frontend Mentor | Password generator app</title>
+    <title>Password generator app</title>
   </head>
   <body>
-    <div class="generate--section">
-      <input
-        type="text"
-        class="input--password"
-        placeholder="P4$5W0rD!"
-        disabled
-        id="password--feild"
-      />
-      <div class="gnerater--info">
-        <span class="copy--success">#</span>
-        <span class="icon--copy"></span>
-      </div>
-    </div>
+    <main class="container">
+      <form class="app--section" novalidate>
+        <h1 class="app--title">Password Generator</h1>
+        <div class="generate--section">
+          <input
+            type="text"
+            class="input--password"
+            placeholder="P4$5W0rD!"
+            disabled
+            id="password--feild"
+          />
+          <div class="gnerater--info">
+            <span class="copy--success"></span>
+            <span class="icon--copy"></span>
+          </div>
+        </div>
+        <footer class="app--footer">
+          <div class="content">
+            <div class="slider--block">
+              <header class="slider--header">
+                <h3 class="slider--title">Character Length</h3>
+                <span class="slider--value">0</span>
+              </header>
+
+              <!-- slider -->
+              <input
+                class="slider--range"
+                min="0"
+                value="0"
+                max="2000"
+                type="range"
+                name="input"
+                id="slider"
+              />
+            </div>
+            <!-- check box -->
+            <div class="check--block">
+              <div class="box--holder">
+                <input type="checkbox" id="uppercase" class="check--list" />
+                <label class="box--title" for="uppercase"
+                  >Include Uppercase Letters</label
+                >
+              </div>
+
+              <div class="box--holder">
+                <input type="checkbox" id="lowercase" class="check--list" />
+                <label class="box--title" for="lowercase"
+                  >Include Lowercase Letters</label
+                >
+              </div>
+
+              <div class="box--holder">
+                <input type="checkbox" id="numbers" class="check--list" />
+                <label class="box--title" for="numbers">Include Numbers</label>
+              </div>
+
+              <div class="box--holder">
+                <input type="checkbox" id="symbols" class="check--list" />
+                <label class="box--title" for="symbols">Include Symbols</label>
+              </div>
+            </div>
+
+            <div class="info--section">
+              <h2 class="info--title">STRENGTH</h2>
+              <div class="info--rate--section">
+                <span class="password--power"></span>
+                <div class="info--icons">
+                  <div class="info--icon"></div>
+                  <div class="info--icon"></div>
+                  <div class="info--icon"></div>
+                  <div class="info--icon"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn">
+            <span>BUTTON IDLE</span>
+            <div class="arrow--icon"></div>
+          </button>
+        </footer>
+      </form>
+    </main>
+    <script src="./assets/js/app.js"></script>
   </body>
 </html>
